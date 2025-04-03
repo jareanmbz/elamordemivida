@@ -1,0 +1,256 @@
+/* Establecer un buen diseño base para pantallas grandes */
+body {
+    margin: 0;
+    font-family: 'Inclusive Sans', sans-serif;
+    background-color: #3a7f38; /* Verde campo sólido */
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+    animation: desvanecer 1.5s ease-out;
+}
+
+.Con-2 {
+    display: none;
+    animation: aparecer 2s ease-out;
+}
+
+canvas {
+    display: block;
+    max-width: 100%; /* Hace que el canvas se ajuste al ancho de la pantalla */
+    height: auto;
+}
+
+.boton-oculto {
+    position: fixed;
+    bottom: 10px; /* Ajustado para que no esté tan abajo */
+    right: 10px;  /* Ajustado para que no quede muy a la derecha */
+    background-color: #007bff;
+    padding: 6px 12px; /* Menos padding para hacerlo más pequeño */
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;  /* Tamaño de fuente más pequeño */
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Ancho más pequeño */
+    max-width: 100%; /* No exceder el tamaño de la pantalla */
+}
+
+.imagen-boton {
+    width: 50px; /* Tamaño de la imagen */
+    height: 50px;
+}
+
+.mensaje {
+    display: block;
+    text-align: center;
+    font-size: 12px;  /* Tamaño de fuente reducido */
+    margin: 0;
+}
+
+.boton-oculto:hover #mensaje {
+    display: block; /* Mostrar mensaje al hacer hover */
+}
+
+.Contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* Cambiado para que la flor y el mensaje se apilen verticalmente */
+    height: 100vh;
+    margin: 0;
+}
+
+.Con {
+    display: flex;
+    justify-content: space-between;  /* Distribuye los botones con espacio entre ellos */
+    align-items: center;
+    margin-top: 15px;
+    width: 300px;  /* Ajustamos el ancho para que los botones tengan espacio suficiente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Texto {
+    display: none;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;  /* Espacio entre la flor y el mensaje */
+}
+
+
+.Texto h2 {
+    font-size: 30px;
+}
+
+#B12 {
+    margin-left: 30px;
+}
+
+.Button {
+    font-family: monospace;
+    font-size: x-large;
+    transition-duration: 0.2s;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: yellow;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    width: 130px;  /* Ajustamos el tamaño de los botones para que no se vean tan grandes */
+}
+
+.Button:hover {
+    transform: scale(1.1);
+    border-radius: 14px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    background-color: black;
+}
+
+.Contenedor-Binicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.Con-Emergente {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+}
+
+.cua {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Ajuste para móviles */
+    max-width: 400px; /* Límite de tamaño */
+    max-height: 80hv; /* Límite de tamaño */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid greenyellow;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: aparecer 0.5s ease-out;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto; /* Centrado del canvas */
+    max-width: 100%; /* Aseguramos que el canvas no sobrepase el ancho de la pantalla */
+}
+
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 468px) {
+    body {
+        background-color: #3a7f38; /* Verde campo sólido */
+    }
+
+
+    h1 {
+        font-size: 50px; /* Ajustar el tamaño del título */
+    }
+
+    .Button {
+        font-size: large; /* Ajustar el tamaño de los botones */
+        padding: 12px; /* Más espacio en los botones */
+    }
+
+    .Texto h2 {
+        font-size: 35px; /* Ajustar tamaño del texto */
+    }
+
+    .Contenedor {
+        height: auto; /* El contenedor se adapta a la altura del contenido */
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 768px) {
+
+    .Contenedor {
+        flex-direction: column;  /* Aseguramos que el contenido se apile verticalmente en pantallas pequeñas */
+        align-items: center; /* Centramos todo en la pantalla */
+    }
+
+    .Texto {
+        font-size: 1.2rem; /* Ajustamos el tamaño de texto en pantallas pequeñas */
+        margin-top: 10px;
+    }
+
+    .Flor {
+        max-width: 90%; /* Hacemos el canvas un poco más pequeño en móviles */
+        max-height: 300px; /* Limita la altura del canvas */
+    }
+
+    body {
+        background-color: #3a7f38; /* Verde campo sólido */
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .Button {
+        font-size: medium;
+        padding: 8px;
+    }
+
+    .Texto h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .boton-oculto {
+        width: 130px; /* Ancho reducido en móviles */
+        bottom: 10px; /* Más espacio desde abajo */
+        right: 10px;  /* Espacio desde la derecha */
+    }
+
+    .mensaje {
+        font-size: 10px; /* Tamaño de texto aún más pequeño en móviles */
+    }
+}
+
+@keyframes desvanecer {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
